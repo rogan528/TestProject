@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <com.zhangbin.testproject.DragLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
-
         <ImageView
             android:id="@+id/iv1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/v1">
-        </ImageView>
-
+            android:src="@drawable/v1"/>
         <ImageView
             android:id="@+id/iv2"
             android:layout_width="wrap_content"
@@ -24,9 +21,39 @@
             android:layout_gravity="center_horizontal"
             android:src="@drawable/v2"
             android:visibility="visible"
-            >
-
-        </ImageView>
+            />
+        <ImageView
+            android:id="@+id/iv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/v2"
+            android:visibility="visible"
+            />
     </com.zhangbin.testproject.DragLayout>
-
-</LinearLayout>
+    <com.zhangbin.testproject.DragFrameLayout
+        android:id="@+id/dragframeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom|right"
+        android:visibility="visible">
+    <tv.danmaku.ijk.media.example.widget.media.IjkDragVideoView
+        android:id="@+id/ijk_videoView"
+        android:layout_width="160dp"
+        android:layout_height="120dp"
+        android:background="@color/colorAccent"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="166dp"
+        android:clickable="false"
+        android:longClickable="false"
+        android:visibility="visible"/>
+</com.zhangbin.testproject.DragFrameLayout>
+    <TableLayout
+        android:id="@+id/hud_view"
+        android:layout_width="180dp"
+        android:layout_height="85dp"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="bottom|center"
+        android:padding="8dp"
+        android:visibility="gone"/>
+</FrameLayout>

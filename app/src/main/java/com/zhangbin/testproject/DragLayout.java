@@ -4,28 +4,13 @@ import android.support.v4.widget.ViewDragHelper;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
 public class DragLayout extends LinearLayout {
 
     private ViewDragHelper mDragger;
 
     private ViewDragHelper.Callback callback;
-
-    private ImageView iv1;
-    private ImageView iv2;
-
-    @Override
-    protected void onFinishInflate() {
-        iv1 = (ImageView) this.findViewById(R.id.iv1);
-        iv2 = (ImageView) this.findViewById(R.id.iv2);
-        super.onFinishInflate();
-
-    }
-
     public DragLayout(Context context) {
         super(context);
 
@@ -43,9 +28,6 @@ public class DragLayout extends LinearLayout {
         //这个地方实际上函数返回值为true就代表可以滑动 为false 则不能滑动
         @Override
         public boolean tryCaptureView(View child, int pointerId) {
-            if (child == iv2) {
-                return false;
-            }
             return true;
         }
 //这个地方实际上left就代表 你将要移动到的位置的坐标。返回值就是最终确定的移动的位置。
